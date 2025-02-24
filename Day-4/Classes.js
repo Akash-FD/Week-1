@@ -1,25 +1,16 @@
 "use strict";
 // ----------------Classes --------------
-
-class Car {
-  constructor(make, model, year) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-  }
-  di() {
-    console.log(`${this.year} ${this.make} ${this.model}`);
-  }
+// There are three main visibility modifiers in TypeScript.
+// public - (default) allows access to the class member from anywhere
+// private - only allows access to the class member from within the class
+// protected - allows access to the class member from itself and any classes that inherit it, which is covered in the inheritance section below
+class Perosn {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        return this.name;
+    }
 }
-class ElectricCar extends Car {
-  constructor(make, model, year, batteryLife) {
-    super(make, model, year);
-    this.batteryLife = batteryLife;
-  }
-  d() {
-    console.log(`Battery life: ${this.batteryLife} hours`);
-  }
-}
-let tesla = new ElectricCar("Tesla", "Model S", 2022, 24);
-tesla.di();
-tesla.d();
+const person = new Perosn("dow");
+console.log(person.getName()); // person.name is not accecs outside of scope
